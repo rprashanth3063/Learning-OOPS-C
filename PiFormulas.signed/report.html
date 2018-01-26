@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18012618532062822885930313767"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2018-01-26T18:53:28Z"/>
+<meta name="ID" content="PiFormulas"/>
+<meta name="User" content="18012618447uilaf41etqdw2b5jziccea62"/>
+<meta name="Problem" content="ext/18012520543wfclc1nwxr92426aaisknqm6"/>
+<meta name="Elapsed" content="1393 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing PiFormulas.cpp</p>
+<div class="run">
+<pre class="output">
+</pre>
+<pre class="output">pi   = 3.141592653589793 = 4*arctan(1)
+
+Ramanujan's pi formulas:
+pi15 = 3.141592653589793
+pi16 = 3.141592653589794
+pi18 = 3.141592653589794
+pi22 = 3.141592653589794
+pi31 = 3.141592653589793
+
+Euler's infinite sum for pi*pi/6 = 1.6449341
+                      Converged to 1.6447253 after 10001 iterations
+
+Euler's estimate for pi = 3.1413934
+                  error = 0.0001992305
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Student files</p>
+<div class="studentFiles">
+<p class="caption">PiFormulas.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main()
+{
+        /***** Complete this program. *****/
+double pi= 4*atan(1);
+    cout.precision(16);
+    cout &lt;&lt; "pi   = " &lt;&lt; pi &lt;&lt; " = 4*arctan(1)" &lt;&lt; endl;
+
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Ramanujan's pi formulas:" &lt;&lt; endl;
+///Ramanujan's formulae////////////////////////////////////////////////////////////////////
+    double pi15=(12/sqrt(130))*log(((2+sqrt(5))*(3+sqrt(13)))/sqrt(2));
+    cout.precision(16);
+    cout&lt;&lt;"pi15 = "&lt;&lt;pi15&lt;&lt;endl;
+
+    double pi16=(24/sqrt(142)*log(sqrt((10+(11*sqrt(2)))/4)+sqrt((10+(7*sqrt(2)))/4)));
+    cout&lt;&lt;"pi16 = "&lt;&lt;pi16&lt;&lt;endl;
+
+    double pi18=(12/sqrt(190))*log((2*sqrt(2)+sqrt(10)) * (3+sqrt(10)));
+    cout&lt;&lt;"pi18 = "&lt;&lt;pi18&lt;&lt;endl;
+
+    double pi22=(12/sqrt(310))*log(((3+sqrt(5))*(2+sqrt(2))*((5+2*sqrt(10))+sqrt(61+20*sqrt(10))))/4);
+    cout&lt;&lt;"pi22 = "&lt;&lt;pi22&lt;&lt;endl;
+
+    double pi31=(4/sqrt(522))*log(pow(((5+sqrt(29))/sqrt(2)),3)*((5*sqrt(29))+(11*sqrt(6)))*pow(((sqrt((9+(3*sqrt(6)))/4))+(sqrt((5+(3*sqrt(6)))/4))),6));
+    cout&lt;&lt;"pi31 = "&lt;&lt;pi31&lt;&lt;endl;
+    cout&lt;&lt;endl;
+////////////////////////////////////////////////////////////////////////////////////////////
+float eulerpisquareby6=(pi*((pi/6)));
+ 	cout.precision(8);
+    cout &lt;&lt; "Euler's infinite sum for pi*pi/6 = " &lt;&lt; eulerpisquareby6&lt;&lt; endl;
+
+float convergedvalue=0;
+int i=0;
+    for (i=1;i&lt;=10000;i++){
+    	convergedvalue+=(1/pow(i,2));
+    }
+
+    cout &lt;&lt; "                      Converged to " &lt;&lt; convergedvalue
+             &lt;&lt; " after " &lt;&lt; i &lt;&lt; " iterations" &lt;&lt; endl;
+    cout&lt;&lt;endl;
+float eulerestimate=sqrt(convergedvalue*6);
+float error=pi-eulerestimate;
+
+cout &lt;&lt; "Euler's estimate for pi = " &lt;&lt; eulerestimate &lt;&lt; endl;
+	cout &lt;&lt; "                  error = " &lt;&lt; error&lt;&lt;endl;
+}
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-01-26T18:53:28Z</div>
+</div>
+</body></html>
